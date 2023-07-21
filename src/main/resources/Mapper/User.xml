@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间：找到所在的mapper接口的位置-->
+<mapper namespace="com.cjx.prj2.mapper.UserMapper">
+
+<update id="change">
+    update user
+    <set>
+        <if test="username != null">
+            username = #{username},
+        </if>
+        <if test="password != null">
+            password = #{password},
+        </if>
+        <if test="email != null">
+            email = #{email},
+        </if>
+        <if test="phone != null">
+            phone = #{phone},
+        </if>
+        <if test="address != null">
+            address = #{address}
+        </if>
+    </set>
+    <where>
+        user_id = #{user_id}
+    </where>
+
+
+</update>
+
+</mapper>
