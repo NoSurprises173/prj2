@@ -2,8 +2,11 @@ package com.cjx.prj2.service;
 
 import com.cjx.prj2.entity.User;
 import com.cjx.prj2.mapper.UserMapper;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserSevrice {
@@ -19,4 +22,8 @@ public class UserSevrice {
     }
 
 
+    public List<User> getUsersByPage(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        return userMapper.selectUsersByPage(pageNum, pageSize);
+    }
 }

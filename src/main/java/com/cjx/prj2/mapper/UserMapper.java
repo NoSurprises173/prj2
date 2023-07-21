@@ -19,4 +19,6 @@ public interface UserMapper {
 
     @Delete("delete from user where user_id = #{id}")
     Integer delete(@Param("id") Integer id);
+
+    List<User> selectUsersByPage(int pageNum, int pageSize);
 }

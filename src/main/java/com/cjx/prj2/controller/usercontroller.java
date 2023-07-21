@@ -39,4 +39,9 @@ public class usercontroller {
     }
      */
 
+    @GetMapping("/page")
+    public List<User> pag(Integer page, Integer size){
+        return userSevrice.getUsersByPage(page,size);
+    }
+
 }

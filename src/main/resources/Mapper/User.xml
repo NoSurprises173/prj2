@@ -29,5 +29,8 @@
 
 
 </update>
+    <select id="selectUsersByPage" resultType="com.cjx.prj2.entity.User">
+        select * from user limit #{start}, #{pageSize}
+    </select>
 
 </mapper>
